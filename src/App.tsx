@@ -5,6 +5,7 @@ import Menu from './components/Menu';
 import Books from './components/Books';
 import { AddBook } from './components/AddBook';
 import { About } from './components/About';
+import { Villas } from './components/Villas';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -32,10 +33,13 @@ const App: React.FC = () => {
     <IonApp>
       <IonReactRouter>
         <IonSplitPane contentId="main">
-          <Menu />
+          <Menu /> 
           <IonRouterOutlet id="main">
             <Route path="/" exact={true}>
               <Redirect to="/Books" />
+            </Route>
+            <Route path="/Villas" exact={true}>
+                <Villas />
             </Route>
             <Route path="/Books" exact={true}>
                 <Books />
